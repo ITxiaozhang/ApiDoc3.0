@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>ef14097b-271f-47d5-85bb-7a83942151d8</ProjectGuid>
+    <ProjectGuid>{EF14097B-271F-47D5-85BB-7A83942151D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ApiDoc</RootNamespace>
@@ -30,24 +30,91 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ApiDocAttribute\AttributeEx.cs" />
+    <Compile Include="ApiDocEnum\Enum.cs" />
+    <Compile Include="ApiModel\ApiData.cs" />
+    <Compile Include="ApiModel\BaseResponse.cs" />
+    <Compile Include="ApiModel\CApiConfig.cs" />
+    <Compile Include="ApiModel\FiledsData.cs" />
+    <Compile Include="ApiModel\MethodJson.cs" />
+    <Compile Include="ApiModel\ResponseData.cs" />
+    <Compile Include="CApi.cs" />
+    <Compile Include="CapiHelper.cs" />
+    <Compile Include="Helper\ConvertUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApiDoc\Config\api-tmp.html" />
+    <Content Include="ApiDoc\Config\index-tmp.html" />
+    <Content Include="ApiDoc\css\animate.min.css" />
+    <Content Include="ApiDoc\css\bootstrap.min.css" />
+    <Content Include="ApiDoc\css\font-awesome.min.css" />
+    <Content Include="ApiDoc\css\self_css.css" />
+    <Content Include="ApiDoc\css\style.min.css" />
+    <Content Include="ApiDoc\js\bootstrap.min.js" />
+    <Content Include="ApiDoc\js\contabs.min.js" />
+    <Content Include="ApiDoc\js\content.min.js" />
+    <Content Include="ApiDoc\js\hplus.min.js" />
+    <Content Include="ApiDoc\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="ApiDoc\js\jquery-ui.custom.min.js" />
+    <Content Include="ApiDoc\js\jquery.json-viewer.js" />
+    <Content Include="ApiDoc\js\jquery.min.js" />
+    <Content Include="ApiDoc\js\plugins\layer\layer.js" />
+    <Content Include="ApiDoc\js\plugins\layer\mobile\layer.js" />
+    <Content Include="ApiDoc\js\plugins\layer\mobile\need\layer.css" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\icon-ext.png" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\icon.png" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\layer.css" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\loading-0.gif" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\loading-1.gif" />
+    <Content Include="ApiDoc\js\plugins\layer\skin\default\loading-2.gif" />
+    <Content Include="ApiDoc\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="ApiDoc\js\plugins\pace\pace.min.js" />
+    <Content Include="ApiDoc\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="ApiDoc\js\welcome.min.js" />
+    <Content Include="ApiDoc\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
+    <Content Include="ApiDoc\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
+    <Content Include="ApiDoc\plugins\fullavatareditor\scripts\swfobject.js" />
+    <Content Include="ApiDoc\plugins\fullavatareditor\scripts\test.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApiDoc\Config\config.json" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont %281%29.eot" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont.eot" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont.svg" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont.ttf" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont.woff" />
+    <None Include="ApiDoc\fonts\fontawesome-webfont.woff2" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular %281%29.eot" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="ApiDoc\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

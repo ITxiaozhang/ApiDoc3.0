@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "TestHrmRequest";
+    Layout = "";
+    var list = (List<string>)ViewBag.Result;
+}
+
+@foreach (var item in list)
+{
+    <p>@item</p>
+}

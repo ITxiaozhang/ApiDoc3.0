@@ -1,0 +1,6 @@
+[
+	{"_CIcon":"","CName":"User","AName":"Get","Name":"Get方法","Url":"User_Get.html","IsPre":true,"CRemark":"User菜单","CIcon":""},
+	{"_CIcon":"","CName":"User","AName":"Post","Name":"Post-value方法","Url":"User_Post.html","IsPre":true,"CRemark":"User菜单","CIcon":""},
+	{"_CIcon":"","CName":"User","AName":"Put","Name":"Put-id-string方法","Url":"User_Put.html","IsPre":true,"CRemark":"User菜单","CIcon":""},
+	{"_CIcon":"","CName":"User","AName":"Delete","Name":"删除ID","Url":"User_Delete.html","IsPre":true,"CRemark":"User菜单","CIcon":""}
+]

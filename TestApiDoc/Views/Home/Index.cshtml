@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiDoc-接口文档快速一键生成</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/ApiDoc/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+    <link href="/ApiDoc/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/ApiDoc/css/animate.min.css" rel="stylesheet">
+    <link href="/ApiDoc/css/self_css.css" rel="stylesheet">
+    <link href="/ApiDoc/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+
+        <div class="panel panel-default status_code" style="position: fixed; top: 30%; right: 0px; width: 180px; z-index: 999;">
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <h5 class="panel-title">
+                        <a href="javascript:void(0);">【快速导航】</a>
+                    </h5>
+                    <br />
+                    <a href="/ApiDoc" class="btn btn-block  btn-success" target="_blank">查看Api文档</a>
+                    <a href="/Home/index2" class="btn btn-block btn-success" target="_blank">更新所有文档</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a href="javascript:void(0);">使用步骤：</a>
+                                    </h5>
+                                </div>
+                                <div class="panel-collapse collapse in ibox-content">
+                                    <ol class="parent_ol">
+                                        <li class="hover_li pli">↓↓↓复制【ApiDoc文件夹】【CApi.cs】【CapiHelper.cs】到你的项目(【ApiDoc文件夹】必须为根目录)↓↓↓
+                                            <ol>
+                                                <li>【ApiDoc文件夹】存放模版页面和相关JS(当前使用Hplus的模版,控制器Icon可查找相关样式来设置)</li>
+                                                <li>【CApi.cs】为核心代码,请慎重修改（动态设置属性来修改相关配置）
+                                                </li>
+                                                <li>【CapiHelper.cs】中重写【AddBackClassDic】【AddGetParam】两个方法,来配置需要替换的数据
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li class="pli">按照示例控制器【UserController.cs】给 [控制器] 和 [方法添] 加特性</li>
+                                        <li class="hover_li pli">↓↓↓按照【HomeController.cs】中直接调用CapiHelper即可生成文档↓↓↓
+                                            <ol>
+                                                <li>中实new CapiHelper()后直接调用CApi_Create()方法即可生成文档（实例化必须填写程序集名称,和项目访问地址）</li>
+                                                <li>【HomeController.cs】包含TestApiRequest接口,通过修改/ApiDoc/Config/index-tmp.html 中js的模拟请求地址来更换Url（模拟请求中调用的接口）</li>
+                                            </ol>
+                                        </li>
+                                        <li class="pli">生成文档页面包含【模拟请求】测试接口,【方法名搜索】查找到说明文档位置</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a href="javascript:void(0);">项目代码说明：</a>
+                                    </h5>
+                                </div>
+                                <div class="panel-collapse collapse in ibox-content">
+                                    <h3>控制器配置示例及说明：</h3>
+                                    <h5 style="color: red;">(检测是否有HttpGet/HttpPost特性【所属命名空间：System.Web.Http（并非System.Web.Mvc）】)</h5>
+                                    <img src="~/Images/示例-使用.png" />
+                                    <br />
+                                    <br />
+                                    <h3>CapiHelper继承核心类CApi,并重写了2个设置数据类型的方法：</h3>
+                                    <img src="~/Images/示例-使用1.png" />
+                                    <br />
+                                    <br />
+                                    <h3>CApi中ApiConfigAttribute可直接当作异常处理特性,既方便又简单,并且很好的对异常进行了处理：</h3>
+                                    <img src="~/Images/示例-使用2.png" />
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">
+                                        <a href="javascript:void(0);">自动生成文档效果：</a>
+                                    </h5>
+                                </div>
+                                <div class="panel-collapse collapse in ibox-content">
+                                    <h3>首页-单个文档页示例：</h3>
+                                    <img src="~/Images/效果1.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    </style>
+    <script src="/ApiDoc/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/ApiDoc/js/bootstrap.min.js?v=3.3.5"></script>
+    <script src="/ApiDoc/js/content.min.js?v=1.0.0"></script>
+    <script src="/ApiDoc/js/jquery.json-viewer.js?v=1.0.0"></script>
+    <script src="/ApiDoc/js/plugins/layer/layer.js"></script>
+    <style>
+        s,
+        em {
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        .BackSuccess ul li {
+            list-style: none;
+        }
+
+        .ibox-content img {
+            max-width: 100%;
+            border: 1px solid red;
+        }
+
+        .hover_li ol {
+            display: none;
+        }
+
+        .parent_ol .pli {
+            padding: 5px 0px;
+            color: red;
+            font-size: 14px;
+        }
+
+        .pli li {
+            font-weight: bold;
+            color: #000;
+            padding: 2px 0px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".bounceInUp").remove();
+            $(".hover_li").mousemove(function () {
+                $(this).find("ol").show();
+            })
+            $(".hover_li").mouseout(function () {
+                $(this).find("ol").hide();
+            })
+        })
+    </script>
+</body>
+
+</html>
